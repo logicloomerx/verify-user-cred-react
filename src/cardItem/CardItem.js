@@ -13,6 +13,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import VerifyCredentials from '../verifyCredentials/VerifyCredentials';
+import { green } from '@material-ui/core/colors';
+import { ContentAddCircle } from 'material-ui/svg-icons';
 
 const useStyles = makeStyles({
     root: {
@@ -37,26 +39,26 @@ export default function CardItem(props) {
                                         component="img"
                                         alt={cardItem.title}
                                         height="140"
-                                        image={imgPath.concat(cardItem.imgName)} s
+                                        image={imgPath.concat(cardItem.imgName)}
                                         title={cardItem.title}
                                     />
-                                    </CardActionArea>
-                                    <CardContent>
-                                        <ExpansionPanel>
-                                            <ExpansionPanelSummary
-                                                expandIcon={<ExpandMoreIcon />}
-                                                aria-controls="panel1a-content"
-                                                id="panel1a-header"
-                                            >
-                                                <Typography className={classes.heading}>{cardItem.title}</Typography>
-                                            </ExpansionPanelSummary>
-                                            <ExpansionPanelDetails>
-                                                <Typography>
-                                                    <VerifyCredentials/>
-                                                </Typography>
-                                            </ExpansionPanelDetails>
-                                        </ExpansionPanel>
-                                    </CardContent>
+                                </CardActionArea>
+                                <CardContent>
+                                    <ExpansionPanel>
+                                        <ExpansionPanelSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Typography className={classes.heading}>{cardItem.title}</Typography>
+                                        </ExpansionPanelSummary>
+                                        <ExpansionPanelDetails>
+                                            <Typography>
+                                                <VerifyCredentials webSiteId={cardItem.id} userName={props.userName} />
+                                            </Typography>
+                                        </ExpansionPanelDetails>
+                                    </ExpansionPanel>
+                                </CardContent>
                                 <CardActions>
                                     <Button size="small" color="primary" href={cardItem.link}>
                                         Visit Login Page
@@ -66,6 +68,7 @@ export default function CardItem(props) {
                         </Grid>
                     )
                 })}
+            
             </Grid>
 
         </div>
