@@ -91,7 +91,7 @@ class MainPage extends React.Component {
       <div>
         <MuiThemeProvider>
           <div>
-            <AppBar title="Home Page">
+            <AppBar title="Home Page" position="sticky">
               <Button label="Add Item" color="inherit" onClick={this.addItem}>
                 Add Item</ Button>
             </AppBar>
