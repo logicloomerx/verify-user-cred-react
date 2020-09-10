@@ -77,6 +77,8 @@ class MainPage extends React.Component {
       .then((response) => {
         if (response.data) {
           this.setState({ label: <h3>User registered successfully.</h3> })
+          window.location.reload(false);
+
         } else {
           this.setState({ label: <h3>Error while registration</h3> })
         }

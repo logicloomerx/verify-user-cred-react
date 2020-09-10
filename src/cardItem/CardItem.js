@@ -13,8 +13,10 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import VerifyCredentials from '../verifyCredentials/VerifyCredentials';
-import { green } from '@material-ui/core/colors';
-import { ContentAddCircle } from 'material-ui/svg-icons';
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { CardHeader } from 'material-ui';
+import { IconButton } from '@material-ui/core';
+
 
 const useStyles = makeStyles({
     root: {
@@ -34,6 +36,9 @@ export default function CardItem(props) {
 
                         <Grid item xs={4}>
                             <Card className={classes.root}>
+                                <CardHeader
+                                    title={cardItem.title}
+                                />
                                 <CardActionArea>
                                     <CardMedia
                                         component="img"
@@ -68,7 +73,7 @@ export default function CardItem(props) {
                         </Grid>
                     )
                 })}
-            
+
             </Grid>
 
         </div>
